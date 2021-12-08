@@ -77,6 +77,7 @@ class Student:
     def save_to_disk(self):
         if len(self.new_datas) > 0:
             self._save()
+            self.new_datas = []
     
     def _openFile(self, file):
         self.id = 1

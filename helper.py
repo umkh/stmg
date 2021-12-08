@@ -9,9 +9,11 @@ def menu():
         5 - Save""")
 
 def add_student(student: Student):
+    student.id = input("StudentID: > ")
     student.name = input("Name: > ")
     student.gender = input("Gender: > ")
     student.age = input("Age: > ")
+    student.enroll_date = input("Enrollment date: > ")
     student.midterm = input("Midterm: > ")
     student.final = input("Final: > ")
     student.add()
@@ -30,6 +32,7 @@ def update_student(student: Student):
             Name: {}
             Gender: {}
             Age: {}
+            Enrollment date: {}
             Midterm: {}
             Final: {}
             GPA: {}""".format(
@@ -37,6 +40,7 @@ def update_student(student: Student):
                 data["Name"], 
                 data["Gender"], 
                 data["Age"],
+                data["Enrollment date"],
                 data["Midterm"],
                 data["Final"],
                 data["GPA"]
@@ -48,6 +52,7 @@ def update_student(student: Student):
         student.name = input("Name: > ")
         student.gender = input("Gender: > ")
         student.age = input("Age: > ")
+        student.enroll_date = input("Enrollment date: > ")
         student.midterm = input("Midterm: > ")
         student.final = input("Final: > ")
         student.update(id)

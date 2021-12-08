@@ -19,7 +19,6 @@ class Student:
 
     def __init__(self, file):
         self._openFile(file)
-        self._lastId()
     
     def calculateGPA(self, midterm, final):
         self.gpa = math.ceil(0.4*float(midterm)+0.6*float(final))
@@ -52,7 +51,6 @@ class Student:
         return ""
 
     def add(self):
-        self.enroll_date = date.today().strftime("%Y/%m/%d")
         self.calculateGPA(self.midterm, self.final)
         new_record = {
             "StudentID": self.id,
@@ -65,7 +63,6 @@ class Student:
             "GPA": self.gpa
         }
         self.new_datas.append(new_record)
-        self.id = self.id + 1
 
     def update(self, id):
         update = {}
@@ -89,11 +86,6 @@ class Student:
             for row in reader:
                 self.data.append(dict(row))
 
-    def _lastId(self):
-        if len(self.data) > 0:
-            current_ID = self.data[-1].get("StudentID")
-            self.id = int(current_ID) + 1
-
     def _save(self):
         with open(self.file, 'w+') as csvfile:
             writer = csv.DictWriter(csvfile, delimiter='\t', fieldnames=self.fields)
@@ -110,6 +102,8 @@ class Student:
             update["Gender"] = self.gender
         if self.age != "":
             update["Age"] = self.age
+        if self.enroll_date != "":
+            update["Enrollment date"] = self.enroll_date
         if self.midterm != "":
             update["Midterm"] = float(self.midterm)
             self.calculateGPA(self.midterm, item["Final"])

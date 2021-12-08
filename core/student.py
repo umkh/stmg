@@ -105,10 +105,17 @@ class Student:
             update["Age"] = self.age
         if self.enroll_date != "":
             update["Enrollment date"] = self.enroll_date
+            
         if self.midterm != "":
             update["Midterm"] = float(self.midterm)
-            self.calculateGPA(self.midterm, item["Final"])
+        else:
+            self.midterm = item["Midterm"]
         if self.final != "":
             update["Final"] = float(self.final)
-            self.calculateGPA(item["Midterm"], self.final)
+        else:
+            self.final = item["Final"]
+
+
+        self.calculateGPA(self.midterm, self.final)
+        update["GPA"] = float(self.gpa)
         

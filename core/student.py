@@ -3,7 +3,7 @@ import math
 from datetime import date, datetime, timedelta
 
 class Student:
-    fields = ['StudentID', 'Name', 'Gender', 'Age', 'Enroll date', 'Midterm', 'Final', 'GPA']
+    fields = ['StudentID', 'Name', 'Gender', 'Age', 'Enrollment date', 'Midterm', 'Final', 'GPA']
     data = []
     new_datas = []
     file = object
@@ -57,7 +57,7 @@ class Student:
             "Name": self.name,
             "Gender": self.gender,
             "Age": self.age,
-            "Enroll date": self.enroll_date,
+            "Enrollment date": self.enroll_date,
             "Midterm": float(self.midterm),
             "Final": float(self.final),
             "GPA": self.gpa

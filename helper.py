@@ -71,6 +71,6 @@ def graduation_date(student: Student):
         )
         print("\nPlease enter study duration! \nExample: 3 12\n\n")
         args = input("Study duration: > ")
-        calculate = student.calculate_grad_date(data["Enroll date"], args)
+        calculate = student.calculate_grad_date(data["Enrollment date"], args)
 
         print("\nGraduation date: {}\n\n".format(calculate))

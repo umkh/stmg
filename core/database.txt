@@ -1,3 +1,0 @@
-StudentID	Name	Gender	Age	Enroll date	Midterm	Final	GPA
-1	Asilbek	1	20	2020/04/10	34.0	54.0	46
-2	Umid	1	23	2019/04/10	34.0	54.0	46
